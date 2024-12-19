@@ -23,13 +23,18 @@ export default function DocSummarize() {
 </div>
     {/*  Upload Section */}
     {/*  Dropzone */}
+
 <div className="max-w-3xl bg-gray-800 rounded-lg shadow-md p-5  flex justify-center items-center mx-64 ">
         
-        <div
-              id="dropzone"
+
+        <div 
              className=" m-4 relative border-2 border-dashed border-gray-600 rounded-lg h-60 w-80 flex justify-center items-center bg-gray-900 hover:border-blue-500 transition-colors">
 
-             <input type="file" className="absolute w-full h-full opacity-0 cursor-pointer" />
+             <input  
+             type="file"
+             id="fileInput"
+             name="fileInput"
+             className="absolute w-full h-full opacity-0 cursor-pointer" />
                     
              <div className="text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 mx-auto mb-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -39,7 +44,7 @@ export default function DocSummarize() {
              </div>
              
              </div>    
-  
+
     {/*  Result Section */}
         <div
              className=" m-4 relative border-2 border-dashed border-gray-600 rounded-lg h-60 w-80 flex justify-center items-center bg-gray-900 hover:border-blue-500 transition-colors">
@@ -55,20 +60,18 @@ export default function DocSummarize() {
     
 </div>
 
-
-
 </div>
 
 
 <div className="max-w-3x1 m-4 text-center flex justify-center items-center" >
 
              {/*  Button Upload Actions  */}
-             <div className="mx-14 text-center">
+             <div className="mx-18 text-center">
                     <button
                         className="inline-flex items-center px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600">
                         Summarize Text
                     </button>
-                </div>
+            </div>
 
             {/*  Button Save Actions  */}
              <div className="mx-28 text-center">
@@ -76,7 +79,7 @@ export default function DocSummarize() {
                         className="inline-flex items-center px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600">
                         save Text
                     </button>
-                </div>
+            </div>
 </div>            
 
 
@@ -87,7 +90,7 @@ export default function DocSummarize() {
 
 {/*  -------------------------------------------------------- */}
 
-    <div className="container px-5 py-2 mx-auto">
+    <div className="container px-5 py-2 mx-auto mt-10">
         <div className="text-center mb-20">
             <h2 className="sm:text-2xl text-2xl font-medium text-center title-font text-white mb-2">Follow these steps to use this Tool </h2>
         </div>
@@ -136,6 +139,8 @@ export default function DocSummarize() {
     </div>
     
 </section>
+
+
 
 
 

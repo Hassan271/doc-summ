@@ -10,7 +10,9 @@ export default function Footer() {
 
   <div className="border-t border-gray-800">
     <div className="container px-5 py-8 flex flex-wrap mx-auto items-center">
-      <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
+      
+{/* Subscribe News Letter =========================================================== */}
+       {/* <div className="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
         <div className="relative sm:w-64 w-40 sm:mr-4 mr-2">
           <label className="leading-7 text-sm text-gray-400">Placeholder</label>
           <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
@@ -19,8 +21,12 @@ export default function Footer() {
         <p className="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 text-center sm:text-left">For more information
           <br className="lg:block hidden" />Subscribe our Email
         </p>
-      </div>
-      <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+      </div>  */}
+
+
+{/* Social Media Links =========================================================== */}
+
+      {/* <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
         <a className="text-gray-400">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -43,13 +49,15 @@ export default function Footer() {
             <circle cx="4" cy="4" r="2" stroke="none"></circle>
           </svg>
         </a>
-      </span>
+      </span> */}
+
+
     </div>
   </div>
   <div className="bg-gray-800 bg-opacity-75">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
       <p className="text-gray-400 text-sm text-center sm:text-left">© 2024 Tool —
-        <a href="https://twitter.com/knyttneve" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@tool</a>
+        <a href="https://twitter.com/knyttneve" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@summarizer</a>
       </p>
       <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-400 text-sm">Document Summarizer </span>
     </div>
