@@ -1,96 +1,108 @@
-import React from 'react'
-// import Image from "next/image";
+"use client"
+import React, { useState, useEffect } from 'react';
 
 export default function DocSummarize() {
+  const [fileName, setFileName] = useState('No file selected');
+
+  useEffect(() => {
+    const fileInput = document.getElementById('fileInput');
+
+    const handleFileChange = () => {
+      if (fileInput.files && fileInput.files[0]) {
+        setFileName(fileInput.files[0].name);
+      }
+    };
+
+    fileInput.addEventListener('change', handleFileChange);
+
+    return () => {
+      fileInput.removeEventListener('change', handleFileChange);
+    };
+  }, []);
+
   return (
-    
     <>
+      {/* Tool Starts ===================================================================== */}
+      <section className="text-gray-400 bg-gray-900 body-font  ">
+        <div className="container mx-auto flex flex-col px-2 py-2 justify-center items-center">
+          {/* Title */}
+          <div className="w-full md:w-2/3 flex flex-col mb-8 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-6 font-medium text-white">
+              Summarize your Text
+            </h1>
 
+            <p className="mb-8 leading-relaxed text-gray-400">
+              Upload, drag, drop, or paste your text here for seamless and accurate text summarization.
+            </p>
+          </div>
+        </div>
 
-{/*  Tool Starts ===================================================================== */}
-{/*     */}
-<section className="text-gray-400 bg-gray-900 body-font ">
-<div className="container mx-auto flex flex-col px-5 py-2 justify-center items-center  ">
+        {/* Upload Section */}
+        <div className="max-w-3xl bg-gray-800 rounded-lg shadow-md p-10 flex justify-center items-center mx-auto">
+          <div
+            className="m-4 relative border-2 border-dashed border-gray-600 rounded-lg h-60 w-80 flex justify-center items-center bg-gray-900 hover:border-blue-500 transition-colors">
+            <input
+              type="file"
+              id="fileInput"
+              name="fileInput"
+              className="absolute w-full h-full opacity-0 cursor-pointer"
+            />
 
- {/*  Title */}
- <div className="w-full md:w-2/3 flex flex-col mb-8 items-center text-center">            
- <h1 className="title-font sm:text-4xl text-3xl mb-6 font-medium text-white">Summarize your Text</h1>
-                
- <p className="mb-8 leading-relaxed text-gray-400">
- Upload, drag, drop, or paste your text here for seamless and accurate text summarization.
-    </p>
- </div>
-</div>
-    {/*  Upload Section */}
-    {/*  Dropzone */}
+            <div className="text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-10 h-10 mx-auto mb-3 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h3.586a1 1 0 01.707.293l2.707 2.707a1 1 0 001.414 0l2.707-2.707a1 1 0 01.707-.293H16a1 1 0 001-1V4a1 1 0 00-1-1H4zm10 8H6a1 1 0 000 2h8a1 1 0 000-2z" />
+              </svg>
+              <p className="text-gray-400">
+                Drag/Drop or paste your text here or click to upload
+              </p>
 
-<div className="max-w-3xl bg-gray-800 rounded-lg shadow-md p-5  flex justify-center items-center mx-64 ">
+              {/* Selected File------------------------------- */}
+              <div className="text-gray-400 mt-4">Selected File: {fileName}</div>
+
+            </div>
+        
+          </div>
+          
+          
+
+          {/* Result Section */}
+          <div
+            className="m-4 relative border-2 border-dashed border-gray-600 rounded-lg h-60 w-80 flex justify-center items-center bg-gray-900 hover:border-blue-500 transition-colors">
+            <div className="text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-10 h-10 mx-auto mb-3 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h3.586a1 1 0 01.707.293l2.707 2.707a1 1 0 001.414 0l2.707-2.707a1 1 0 01.707-.293H16a1 1 0 001-1V4a1 1 0 00-1-1H4zm10 8H6a1 1 0 000 2h8a1 1 0 000-2z" />
+              </svg>
+              <p className="text-gray-400">Output</p>
+            </div>
+          </div>
+        
+        </div>
+
         
 
-        <div 
-             className=" m-4 relative border-2 border-dashed border-gray-600 rounded-lg h-60 w-80 flex justify-center items-center bg-gray-900 hover:border-blue-500 transition-colors">
+        <div className="flex justify-center items-center mt-8 space-x-6">
+          {/* Button Upload Actions */}
+          <button className="px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600">
+            Summarize Text
+          </button>
+          {/* Button Save Actions */}
+          <button className="px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600">
+            Save Text
+          </button>
+        </div>
 
-             <input  
-             type="file"
-             id="fileInput"
-             name="fileInput"
-             className="absolute w-full h-full opacity-0 cursor-pointer" />
-                    
-             <div className="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 mx-auto mb-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                       <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h3.586a1 1 0 01.707.293l2.707 2.707a1 1 0 001.414 0l2.707-2.707a1 1 0 01.707-.293H16a1 1 0 001-1V4a1 1 0 00-1-1H4zm10 8H6a1 1 0 000 2h8a1 1 0 000-2z" />
-                   </svg>
-                   <p className="text-gray-400 ">Drag/Drop or past your Text here or click to upload</p>
-             </div>
-             
-             </div>    
-
-    {/*  Result Section */}
-        <div
-             className=" m-4 relative border-2 border-dashed border-gray-600 rounded-lg h-60 w-80 flex justify-center items-center bg-gray-900 hover:border-blue-500 transition-colors">
-
-             <input type="file" className="absolute w-full h-full opacity-0 cursor-pointer" />
-                    
-             <div className="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 mx-auto mb-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                       <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h3.586a1 1 0 01.707.293l2.707 2.707a1 1 0 001.414 0l2.707-2.707a1 1 0 01.707-.293H16a1 1 0 001-1V4a1 1 0 00-1-1H4zm10 8H6a1 1 0 000 2h8a1 1 0 000-2z" />
-                   </svg>
-                   <p className="text-gray-400">Output</p>
-             </div>
-    
-</div>
-
-</div>
-
-
-<div className="max-w-3x1 m-4 text-center flex justify-center items-center" >
-
-             {/*  Button Upload Actions  */}
-             <div className="mx-18 text-center">
-                    <button
-                        className="inline-flex items-center px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600">
-                        Summarize Text
-                    </button>
-            </div>
-
-            {/*  Button Save Actions  */}
-             <div className="mx-28 text-center">
-                    <button
-                        className="inline-flex items-center px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600">
-                        save Text
-                    </button>
-            </div>
-</div>            
-
-
-
-
-{/*  Tool End ===================================================================== */}
-
-
-{/*  -------------------------------------------------------- */}
-
-    <div className="container px-5 py-2 mx-auto mt-10">
+        {/* Instructions */}
+        <div className="container px-5 py-2 mx-auto mt-10">
         <div className="text-center mb-20">
             <h2 className="sm:text-2xl text-2xl font-medium text-center title-font text-white mb-2">Follow these steps to use this Tool </h2>
         </div>
@@ -137,18 +149,13 @@ export default function DocSummarize() {
         </div>
 
     </div>
-    
-</section>
+  
 
 
 
 
 
-
-
-
-</>
-
-
-  )
+      </section>
+    </>
+  );
 }
